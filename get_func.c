@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * call_fun - Calls the required function.
+ * get_fun - Calls the required function.
  * @func: Pointer to the function that is about to be called.
  * @op: string representing the opcode.
  * @val: string representing a numeric value.

@@ -2,7 +2,7 @@
 
 /**
  * file_open - opens a file
- * @file_name: the file namepath
+ * @fpath: the file namepath
  * Return: void
  */
 
@@ -20,7 +20,7 @@ void file_open(char *fpath)
 
 
 /**
- * read_file - reads a file
+ * r_file - reads a file
  * @f_descr: pointer to file descriptor
  * Return: void
  */
@@ -37,10 +37,10 @@ void r_file(FILE *f_descr)
 }
 
 /**
- * parse_line - Separates each line into tokens to determine
+ * line_parse - Separates each line into tokens to determine
  * which function to call
  * @buff: line from the file
- * @line_number: line number
+ * @line_no: line number
  * @format:  storage format. If 0 Nodes will be entered as a stack.
  * if 1 nodes will be entered as a queue.
  * Return: Returns 0 if the opcode is stack. 1 if queue.
