@@ -56,7 +56,7 @@ void _sub(stack_t **stack, unsigned int line_no)
 	int total;
 	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
     {
-		op_err(8, line_no, "add");
+		op_err(8, line_no, "sub");
     }
 
 	(*stack) = (*stack)->next;
