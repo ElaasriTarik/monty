@@ -74,7 +74,7 @@ void swap_nodes(stack_t **stack, unsigned int line_no)
  * @stack: Pointer to a pointer pointing to top node of the stack.
  * @line_no: Interger representing the line number of of the opcode.
  */
-void add_nodes(stack_t **stack, unsigned int line_no)
+void _add(stack_t **stack, unsigned int line_no)
 {
 	int total;
 	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)

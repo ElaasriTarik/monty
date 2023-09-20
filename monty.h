@@ -66,7 +66,7 @@ void p_stack(stack_t **, unsigned int);
 void add_stack(stack_t **, unsigned int);
 void add_queue(stack_t **, unsigned int);
 
-void add_nodes(stack_t **stack, unsigned int line_no);
+void _add(stack_t **stack, unsigned int line_no);
 void _sub(stack_t **stack, unsigned int line_no);
 
 

@@ -22,7 +22,7 @@ void find_func(char *opcode, char *value, int ln, int format)
 		{"pop", _pop},
 		{"nop", nop},
 		{"swap", swap_nodes},
-		{"add", add_nodes},
+		{"add", _add},
         {"sub", _sub},
 		{NULL, NULL}
 	};
