@@ -14,7 +14,6 @@ void find_func(char *opcode, char *value, int ln, int format)
   int i;
   int flag;
 
-<<<<<<< HEAD
 	instruction_t func_list[] = 
     {
 		{"push", add_stack},
@@ -27,18 +26,6 @@ void find_func(char *opcode, char *value, int ln, int format)
         {"sub", _sub},
 		{NULL, NULL}
 	};
-=======
-  instruction_t func_list[] = {
-      {"push", add_stack},
-      {"pall", p_stack},
-      {"pint", p_top},
-      {"pop", _pop},
-      {"nop", nop},
-      {"swap", swap_nodes},
-      {"add", add_nodes},
-      {NULL, NULL}
-    };
->>>>>>> faa158c0f3986788dfcf5da2bb50c2cfe41fa119
 
   if (opcode[0] == '#')
     {
