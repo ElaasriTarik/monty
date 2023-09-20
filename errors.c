@@ -39,7 +39,7 @@ void err(int error_no, ...)
 }
 
 /**
- * more_err - handles errors.
+ * op_err - handles errors.
  * @error_no: The error codes are the following: 6, 7, 8, 9
  */
 void op_err(int error_no, ...)

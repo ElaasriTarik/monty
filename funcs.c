@@ -11,36 +11,35 @@
  */
 void find_func(char *opcode, char *value, int ln, int format)
 {
-	int i;
-	int flag;
+  int i;
+  int flag;
 
-	instruction_t func_list[] = 
-    {
-		{"push", add_stack},
-		{"pall", p_stack},
-		{"pint", p_top},
-		{"pop", _pop},
-		{"nop", nop},
-		{"swap", swap_nodes},
-		{"add", add_nodes},
-		{NULL, NULL}
-	};
+  instruction_t func_list[] = {
+      {"push", add_stack},
+      {"pall", p_stack},
+      {"pint", p_top},
+      {"pop", _pop},
+      {"nop", nop},
+      {"swap", swap_nodes},
+      {"add", add_nodes},
+      {NULL, NULL}
+    };
 
-	if (opcode[0] == '#')
+  if (opcode[0] == '#')
     {
-		return;
+      return;
     }
 
-	for (flag = 1, i = 0; func_list[i].opcode != NULL; i++)
-	{
-		if (strcmp(opcode, func_list[i].opcode) == 0)
-		{
-			get_fun(func_list[i].f, opcode, value, ln, format);
-			flag = 0;
-		}
-	}
-	if (flag == 1)
+  for (flag = 1, i = 0; func_list[i].opcode != NULL; i++)
     {
-		err(3, ln, opcode);
+      if (strcmp(opcode, func_list[i].opcode) == 0)
+	{
+	  get_fun(func_list[i].f, opcode, value, ln, format);
+	  flag = 0;
+	}
+    }
+  if (flag == 1)
+    {
+      err(3, ln, opcode);
     }
 }

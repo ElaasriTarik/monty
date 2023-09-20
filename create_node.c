@@ -19,7 +19,7 @@ stack_t *create_node(int n)
 }
 
 /**
- * free_nodes - Frees nodes in the stack.
+ * _free - Frees nodes in the stack.
  */
 void _free(void)
 {

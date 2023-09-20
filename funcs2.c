@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * pop_top - Adds a node to the stack.
+ * _pop - Adds a node to the stack.
  * @stack: Pointer to a pointer pointing to top node of the stack.
  * @line_no: Interger representing the line number of of the opcode.
  */
@@ -20,7 +20,7 @@ void _pop(stack_t **stack, unsigned int line_no)
 }
 
 /**
- * print_top - Prints the top node of the stack.
+ * p_top - Prints the top node of the stack.
  * @stack: Pointer to a pointer pointing to top node of the stack.
  * @line_no: Interger representing the line number of of the opcode.
  */
@@ -72,7 +72,7 @@ void swap_nodes(stack_t **stack, unsigned int line_no)
 /**
  * add_nodes - Adds the top two elements
  * @stack: Pointer to a pointer pointing to top node of the stack.
- * @line_number: Interger representing the line number of of the opcode.
+ * @line_no: Interger representing the line number of of the opcode.
  */
 void add_nodes(stack_t **stack, unsigned int line_no)
 {
