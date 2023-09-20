@@ -23,6 +23,7 @@ void find_func(char *opcode, char *value, int ln, int format)
 		{"nop", nop},
 		{"swap", swap_nodes},
 		{"add", add_nodes},
+        {"sub", _sub},
 		{NULL, NULL}
 	};
 
@@ -43,4 +44,24 @@ void find_func(char *opcode, char *value, int ln, int format)
     {
 		err(3, ln, opcode);
     }
+}
+
+/**
+ * _sub - subs the top two elements
+ * @stack: Pointer to a pointer pointing to top node of the stack.
+ * @line_no: Interger representing the line number of of the opcode.
+ */
+void _sub(stack_t **stack, unsigned int line_no)
+{
+	int total;
+	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
+    {
+		op_err(8, line_no, "add");
+    }
+
+	(*stack) = (*stack)->next;
+	total = (*stack)->n - (*stack)->prev->n;
+	(*stack)->n = total;
+	free((*stack)->prev);
+	(*stack)->prev = NULL;
 }
