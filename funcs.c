@@ -54,13 +54,14 @@ void find_func(char *opcode, char *value, int ln, int format)
 void _sub(stack_t **stack, unsigned int line_no)
 {
 	int total;
-	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
+	if (*stack == NULL || stack == NULL || (*stack)->next == NULL)
     {
 		op_err(8, line_no, "sub");
     }
 
-	(*stack) = (*stack)->next;
+	*stack = (*stack)->next;
 	total = (*stack)->n - (*stack)->prev->n;
+
 	(*stack)->n = total;
 	free((*stack)->prev);
 	(*stack)->prev = NULL;
