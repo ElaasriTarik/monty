@@ -1,9 +1,9 @@
 #include "monty.h"
 stack_t *head = NULL;
 /**
- * main - entry point
- * @argc: arguments count
- * @argv: list of arguments
+ * main - Start of program
+ * @argc: number of arguments
+ * @argv: array of arguments
  * Return: always 0
  */
 

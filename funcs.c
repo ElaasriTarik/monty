@@ -5,11 +5,11 @@
  * @opcode: opcode
  * @value: argument of opcode
  * @format:  storage format. If 0 Nodes will be entered as a stack.
- * @ln: line number
+ * @line_no: line number
  * if 1 nodes will be entered as a queue.
  * Return: void
  */
-void find_func(char *opcode, char *value, int ln, int format)
+void find_func(char *opcode, char *value, int line_no, int format)
 {
   int i;
   int flag;
@@ -21,9 +21,10 @@ void find_func(char *opcode, char *value, int ln, int format)
 		{"pint", p_top},
 		{"pop", _pop},
 		{"nop", nop},
-		{"swap", swap_nodes},
-		{"add", add_nodes},
+		{"swap", _swap},
+		{"add", _add},
         {"sub", _sub},
+        {"mul", _mul},
 		{NULL, NULL}
 	};
 
@@ -36,19 +37,19 @@ void find_func(char *opcode, char *value, int ln, int format)
     {
       if (strcmp(opcode, func_list[i].opcode) == 0)
 	{
-	  get_fun(func_list[i].f, opcode, value, ln, format);
+	  get_fun(func_list[i].f, opcode, value, line_no, format);
 	  flag = 0;
 	}
     }
   if (flag == 1)
     {
-      err(3, ln, opcode);
+      err(3, line_no, opcode);
     }
 }
 
 /**
  * _sub - subs the top two elements
- * @stack: Pointer to a pointer pointing to top node of the stack.
+ * @stack: top node of the stack.
  * @line_no: Interger representing the line number of of the opcode.
  */
 void _sub(stack_t **stack, unsigned int line_no)
@@ -61,6 +62,27 @@ void _sub(stack_t **stack, unsigned int line_no)
 
 	*stack = (*stack)->next;
 	total = (*stack)->n - (*stack)->prev->n;
+
+	(*stack)->n = total;
+	free((*stack)->prev);
+	(*stack)->prev = NULL;
+}
+
+/**
+ * _mul - multiplies the top two elements
+ * @stack: top node of the stack.
+ * @line_no: Interger representing the line number of of the opcode.
+ */
+void _mul(stack_t **stack, unsigned int line_no)
+{
+	int total;
+	if (*stack == NULL || stack == NULL || (*stack)->next == NULL)
+    {
+		op_err(8, line_no, "mul");
+    }
+
+	*stack = (*stack)->next;
+	total = (*stack)->n * (*stack)->prev->n;
 
 	(*stack)->n = total;
 	free((*stack)->prev);

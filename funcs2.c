@@ -45,11 +45,11 @@ void nop(stack_t **stack, unsigned int line_no)
 }
 
 /**
- * swap_nodes - Swaps the top two elements
+ * _swap - Swaps the top two elements
  * @stack: Pointer to a pointer pointing to top node of the stack.
  * @line_no: Interger representing the line number of of the opcode.
  */
-void swap_nodes(stack_t **stack, unsigned int line_no)
+void _swap(stack_t **stack, unsigned int line_no)
 {
 	stack_t *temp;
 
@@ -70,11 +70,11 @@ void swap_nodes(stack_t **stack, unsigned int line_no)
 }
 
 /**
- * add_nodes - Adds the top two elements
+ * _add - Adds the top two elements
  * @stack: Pointer to a pointer pointing to top node of the stack.
  * @line_no: Interger representing the line number of of the opcode.
  */
-void add_nodes(stack_t **stack, unsigned int line_no)
+void _add(stack_t **stack, unsigned int line_no)
 {
 	int total;
 	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)

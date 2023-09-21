@@ -4,11 +4,11 @@
 /**
  * add_queue - Adds a node to queue.
  * @new_node: Pointer to the new node.
- * @ln: line number of the opcode.
+ * @line_no: line number of the opcode.
  */
-void add_queue(stack_t **new_node, __attribute__((unused))unsigned int ln)
+void add_queue(stack_t **new_node, __attribute__((unused))unsigned int line_no)
 {
-	stack_t *tmp;
+	stack_t *temp;
 
 	if (new_node == NULL || *new_node == NULL)
 		exit(EXIT_FAILURE);
@@ -17,23 +17,23 @@ void add_queue(stack_t **new_node, __attribute__((unused))unsigned int ln)
 		head = *new_node;
 		return;
 	}
-	tmp = head;
-	while (tmp->next != NULL)
-		tmp = tmp->next;
+	temp = head;
+	while (temp->next != NULL)
+		temp = temp->next;
 
-	tmp->next = *new_node;
-	(*new_node)->prev = tmp;
+	temp->next = *new_node;
+	(*new_node)->prev = temp;
 
 }
 
 /**
  * add_stack - Adds a node
  * @new_node: Pointer to the new node.
- * @ln: Interger representing the line number of of the opcode.
+ * @line_no: Interger representing the line number of of the opcode.
  */
-void add_stack(stack_t **new_node, __attribute__((unused))unsigned int ln)
+void add_stack(stack_t **new_node, __attribute__((unused))unsigned int line_no)
 {
-	stack_t *tmp;
+	stack_t *temp;
 	if (new_node == NULL || *new_node == NULL)
     {
 		exit(EXIT_FAILURE);
@@ -43,8 +43,8 @@ void add_stack(stack_t **new_node, __attribute__((unused))unsigned int ln)
 		head = *new_node;
 		return;
 	}
-	tmp = head;
+	temp = head;
 	head = *new_node;
-	head->next = tmp;
-	tmp->prev = head;
+	head->next = temp;
+	temp->prev = head;
 }

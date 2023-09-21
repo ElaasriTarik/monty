@@ -7,17 +7,17 @@
  */
 void p_stack(stack_t **stack, unsigned int line_no)
 {
-	stack_t *tmp;
+	stack_t *temp;
     (void) line_no;
 
 	if (stack == NULL)
     {
 		exit(EXIT_FAILURE);
     }
-	tmp = *stack;
-	while (tmp != NULL)
+	temp = *stack;
+	while (temp != NULL)
 	{
-		printf("%d\n", tmp->n);
-		tmp = tmp->next;
+		printf("%d\n", temp->n);
+		temp = temp->next;
 	}
 }

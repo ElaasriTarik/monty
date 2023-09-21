@@ -10,7 +10,7 @@ void file_open(char *fpath)
 {
 	FILE *f_descr = fopen(fpath, "r");
 
-	if (fpath == NULL || f_descr == NULL)
+	if (f_descr == NULL || fpath == NULL)
     {
 		err(2, fpath);
     }
@@ -27,12 +27,12 @@ void file_open(char *fpath)
 
 void r_file(FILE *f_descr)
 {
-	int line_no, format = 0;
+	int line_no, state = 0;
 	char *buff = NULL;
 	size_t len = 0;
 
 	for (line_no = 1; getline(&buff, &len, f_descr) != -1; line_no++)
-		format = line_parse(buff, line_no, format);
+		state = line_parse(buff, line_no, state);
 	free(buff);
 }
 
@@ -41,12 +41,10 @@ void r_file(FILE *f_descr)
  * which function to call
  * @buff: line from the file
  * @line_no: line number
- * @format:  storage format. If 0 Nodes will be entered as a stack.
- * if 1 nodes will be entered as a queue.
- * Return: Returns 0 if the opcode is stack. 1 if queue.
+ * @state:  storage state. If 0 Nodes will be entered as a stack.
  */
 
-int line_parse(char *buff, int line_no, int format)
+int line_parse(char *buff, int line_no, int state)
 {
 	char *opcode, *value;
 	const char *delim = "\n ";
@@ -56,14 +54,20 @@ int line_parse(char *buff, int line_no, int format)
 
 	opcode = strtok(buff, delim);
 	if (opcode == NULL)
-		return (format);
+    {
+		return (state);
+    }
 	value = strtok(NULL, delim);
 
 	if (_strcmp(opcode, "stack") == 0)
+    {
 		return (0);
+    }
 	if (_strcmp(opcode, "queue") == 0)
+    {
 		return (1);
+    }
 
-	find_func(opcode, value, line_no, format);
-	return (format);
+	find_func(opcode, value, line_no, state);
+	return (state);
 }

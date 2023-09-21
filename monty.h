@@ -66,15 +66,14 @@ void p_stack(stack_t **, unsigned int);
 void add_stack(stack_t **, unsigned int);
 void add_queue(stack_t **, unsigned int);
 
-void add_nodes(stack_t **stack, unsigned int line_no);
+void _add(stack_t **stack, unsigned int line_no);
 void _sub(stack_t **stack, unsigned int line_no);
-
+void _mul(stack_t **stack, unsigned int line_no);
+void _swap(stack_t **stack, unsigned int line_no);
 
 void _pop(stack_t **stack, unsigned int line_no);
 void p_top(stack_t **stack, unsigned int line_no);
 void nop(stack_t **stack, unsigned int line_no);
-void swap_nodes(stack_t **stack, unsigned int line_no);
-
 
 /** errors */
 void err(int error_no, ...);

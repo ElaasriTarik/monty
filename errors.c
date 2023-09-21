@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * err - Prints appropiate error messages
+ * err - Prints the right error message
  * @error_no: The error codes are the following: 1, 2, 3, 4, 5.
  */
 void err(int error_no, ...)
@@ -39,7 +39,7 @@ void err(int error_no, ...)
 }
 
 /**
- * op_err - handles errors.
+ * op_err - Prints the right error message
  * @error_no: The error codes are the following: 6, 7, 8, 9
  */
 void op_err(int error_no, ...)
