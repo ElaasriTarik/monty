@@ -75,7 +75,9 @@ void _pop(stack_t **stack, unsigned int line_no);
 void p_top(stack_t **stack, unsigned int line_no);
 void nop(stack_t **stack, unsigned int line_no);
 
-/** errors */
+/**
+ * errors
+*/
 void err(int error_no, ...);
 void op_err(int error_no, ...);
 
