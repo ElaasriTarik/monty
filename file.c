@@ -50,8 +50,11 @@ int line_parse(char *buff, int line_no, int state)
 	const char *delim = "\n ";
 
 	if (buff == NULL)
-		err(4);
-
+    {
+		/**err(4);*/
+        fprintf(stderr, "Error: malloc failed\n");
+        exit(EXIT_FAILURE);
+    }
 	opcode = strtok(buff, delim);
 	if (opcode == NULL)
     {
