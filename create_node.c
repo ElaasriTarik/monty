@@ -30,7 +30,7 @@ void _free(void)
 
 	while (head != NULL)
 	{
-		tmpp = head;
+		tmp = head;
 		head = head->next;
 		free(tmp);
 	}
