@@ -57,7 +57,9 @@ void _sub(stack_t **stack, unsigned int line_no)
 	int total;
 	if (*stack == NULL || stack == NULL || (*stack)->next == NULL)
     {
-		op_err(8, line_no, "sub");
+		/**op_err(8, line_no, "sub");*/
+			fprintf(stderr, "L%d: can't sub, stack too short\n", line_no);
+            exit(EXIT_FAILURE);
     }
 
 	*stack = (*stack)->next;
@@ -78,7 +80,9 @@ void _mul(stack_t **stack, unsigned int line_no)
 	int total;
 	if (*stack == NULL || stack == NULL || (*stack)->next == NULL)
     {
-		op_err(8, line_no, "mul");
+		/**op_err(8, line_no, "mul");*/
+        fprintf(stderr, "L%d: can't mul, stack too short\n", line_no);
+        exit(EXIT_FAILURE);
     }
 
 	*stack = (*stack)->next;

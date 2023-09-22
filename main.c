@@ -10,10 +10,7 @@ stack_t *head = NULL;
 int main(int argc, char *argv[])
 {
 	if (argc != 2)
-	{
-		fprintf(stderr, "USAGE: monty file\n");
-		exit(EXIT_FAILURE);
-	}
+        err(1);
 	file_open(argv[1]);
 	_free();
 	return (0);
