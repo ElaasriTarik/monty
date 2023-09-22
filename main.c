@@ -1,7 +1,7 @@
 #include "monty.h"
 stack_t *head = NULL;
 /**
- * main - tests the of program
+ * main - start the program
  * @argc: number of arguments
  * @argv: array of arguments
  * Return: always 0
