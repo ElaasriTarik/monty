@@ -18,7 +18,7 @@ void get_fun(op_func func, char *op, char *val, int ln, int state)
 	flag = 1;
 	if (_strcmp(op, "push") == 0)
 	{
-		if (val != NULL && val[0] == '-')
+		\
 		{
 			val = val + 1;
 			flag = -1;
