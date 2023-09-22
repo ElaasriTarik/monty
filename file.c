@@ -8,14 +8,14 @@
 
 void file_open(char *fpath)
 {
-	FILE *file_descr = fopen(fpath, "r");
+	FILE *f_descr = fopen(fpath, "r");
 
-	if (file_descr == NULL || fpath == NULL)
+	if (f_descr == NULL || fpath == NULL)
     {
 		err(2, fpath);
     }
-	r_file(file_descr);
-	fclose(file_descr);
+	r_file(f_descr);
+	fclose(f_descr);
 }
 
 
