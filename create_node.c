@@ -23,7 +23,7 @@ stack_t *create_node(int n)
  */
 void _free(void)
 {
-	stack_t *tmp;
+	stack_t *tmpp;
 
 	if (head == NULL)
 		return;
@@ -32,6 +32,6 @@ void _free(void)
 	{
 		tmp = head;
 		head = head->next;
-		free(tmp);
+		free(tmpp);
 	}
 }
